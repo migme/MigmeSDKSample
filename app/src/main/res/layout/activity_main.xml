@@ -23,7 +23,8 @@
             app:layout_constraintTop_toBottomOf="@+id/spinner"
             android:layout_marginLeft="8dp"
             android:onClick="send"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="8dp" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -35,8 +36,9 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/button4"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/button2"
@@ -47,7 +49,8 @@
             android:layout_marginTop="56dp"
             android:layout_marginLeft="8dp"
             android:onClick="loginMigme"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="8dp" />
 
         <Button
             android:id="@+id/button3"
@@ -56,13 +59,13 @@
             android:text="Logout"
             android:onClick="logoutMigme"
             app:layout_constraintTop_toTopOf="@+id/button2"
-            android:layout_marginTop="0dp"
             app:layout_constraintLeft_toRightOf="@+id/button2"
-            android:layout_marginLeft="15dp" />
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{log}"
             android:layout_marginRight="8dp"
@@ -72,9 +75,10 @@
             app:layout_constraintHorizontal_bias="0.692"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            tools:layout_editor_absoluteX="4dp"
             android:maxLines="10"
-            android:gravity="bottom"/>
+            android:gravity="bottom"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -86,7 +90,19 @@
             android:layout_marginTop="16dp"
             android:layout_marginLeft="8dp"
             android:checked="true"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="loginGame"
+            android:text="Game user login"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>

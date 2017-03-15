@@ -45,9 +45,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void initDyson() {
         Dyson.getInstance().setDebugMode(true); //Default value is 'false'
-        dysonTracker = Dyson.getInstance().newTracker(getApplicationContext(), "Migme Game", "00000001");
+        dysonTracker = Dyson.getInstance().newTracker(getApplicationContext(), "Migme Game");
+//        dysonTracker = Dyson.getInstance().newTracker(getApplicationContext(), "Migme Game", "00000001");
         buildLog("Initialize done...");
         buildLog("Debug mode >>> " + Dyson.getInstance().isDebugMode());
+    }
+
+    public void loginGame(View view) {
+        String userId = "Tester000001";
+        dysonTracker.setProjectUserId(userId);
+        buildLog("Login Game : "+userId);
     }
 
     public void loginMigme(View view) {
