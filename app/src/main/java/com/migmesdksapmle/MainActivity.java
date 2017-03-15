@@ -18,9 +18,10 @@ import com.migmesdksapmle.databinding.ActivityMainBinding;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     ActivityMainBinding binding;
     DysonTracker dysonTracker;
+    String userId = "Tester000001";
     String logMessage = "";
     String selection = DysonParameter.ACTION.TYPE.ACHIEVEMENT;
     final String[] actionType = {DysonParameter.ACTION.TYPE.ACHIEVEMENT,
@@ -46,25 +47,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void initDyson() {
         Dyson.getInstance().setDebugMode(true); //Default value is 'false'
         dysonTracker = Dyson.getInstance().newTracker(getApplicationContext(), "Migme Game");
-//        dysonTracker = Dyson.getInstance().newTracker(getApplicationContext(), "Migme Game", "00000001");
+
         buildLog("Initialize done...");
         buildLog("Debug mode >>> " + Dyson.getInstance().isDebugMode());
     }
 
     public void loginGame(View view) {
-        String userId = "Tester000001";
         dysonTracker.setProjectUserId(userId);
         buildLog("Login Game : "+userId);
     }
 
+    public void logoutGame(View view) {
+        dysonTracker.clearMigmeId();
+        buildLog("Logout Game");
+    }
+
     public void loginMigme(View view) {
-        String userId = "Tester000001";
         dysonTracker.setMigmeId(userId);
         buildLog("Login Migme with ID : "+userId);
     }
 
     public void logoutMigme(View view) {
-        dysonTracker.cleanMigmeId();
+        dysonTracker.clearMigmeId();
         buildLog("Logout Migme");
     }
 

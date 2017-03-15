@@ -56,12 +56,12 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
-            android:onClick="logoutMigme"
-            app:layout_constraintTop_toTopOf="@+id/button2"
-            app:layout_constraintLeft_toRightOf="@+id/button2"
             android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp" />
+            android:layout_marginStart="15dp"
+            android:onClick="logoutMigme"
+            android:text="Logout migme"
+            app:layout_constraintLeft_toRightOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/button2" />
 
         <TextView
             android:id="@+id/textView"
@@ -103,6 +103,17 @@
             android:text="Game user login"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="8dp"
+            android:text="Logout game"
+            android:onClick="logoutGame"
+            app:layout_constraintLeft_toRightOf="@+id/button4"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
