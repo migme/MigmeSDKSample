@@ -1,1 +1,1 @@
-include ':app', ':MigmeSDK'
+include ':app'
