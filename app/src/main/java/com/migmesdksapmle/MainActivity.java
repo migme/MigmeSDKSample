@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     DysonTracker dysonTracker;
     String userId = "Tester000001";
     String logMessage = "";
+
     String selection = DysonParameter.ACTION.TYPE.ACHIEVEMENT;
     final String[] actionType = {DysonParameter.ACTION.TYPE.ACHIEVEMENT,
             DysonParameter.ACTION.TYPE.BILLING,
@@ -53,23 +54,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void loginGame(View view) {
-        dysonTracker.setProjectUserId(userId);
-        buildLog("Login Game : "+userId);
+        dysonTracker.setUserAppId(userId, userId);
+        buildLog("Login user : "+userId);
     }
 
     public void logoutGame(View view) {
-        dysonTracker.clearMigmeId();
-        buildLog("Logout Game");
-    }
-
-    public void loginMigme(View view) {
-        dysonTracker.setMigmeId(userId);
-        buildLog("Login Migme with ID : "+userId);
-    }
-
-    public void logoutMigme(View view) {
-        dysonTracker.clearMigmeId();
-        buildLog("Logout Migme");
+        dysonTracker.clearUserAppId();
+        buildLog("Logout user");
     }
 
     public void send(View view) {
